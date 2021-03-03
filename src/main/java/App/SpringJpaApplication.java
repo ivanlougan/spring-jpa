@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringJpaApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(SpringJpaApplication.class);
@@ -20,6 +20,9 @@ public class SpringJpaApplication {
 
         Book book1 = bookDao.get(1L);
         System.out.println(book1);
+
+        Thread.sleep(5000);
+
         ctx.close();
 
     }
